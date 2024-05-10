@@ -7,5 +7,5 @@ def exists():
   check50.exists("hello.py")
 def output(exists):
   """We can get Hello World as output (If this is red please type 'Hello World' exactly as shown)"""
-  check50.run("hello.py").stdout("Hello World").exit(0)
+  check50.run("hello.py").stdout("Hello World",regex= False).exit(0)
   
