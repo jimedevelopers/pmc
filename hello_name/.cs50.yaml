@@ -1,0 +1,4 @@
+check50: true
+  files:
+    - !exclude "*"
+    - !include "hello_name.py"
