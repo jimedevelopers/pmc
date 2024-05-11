@@ -1,9 +1,6 @@
-import check50
-
-@check50.check()
-def exist():
-   """hello_name.py"""
-   check50.exists("hello_name.py")
-@check50.check(exist):
-   """The input Jameel produces the output Hello Jameel"""
-   check50.run("python3 hello_name.py").stdin("Jameel").stdout("[Hh]ello [Jj]ameel").exit(0)
+1import check50
+2
+3@check50.check()
+4def id():
+5    """id.py prints what you give it"""
+6    check50.run("python3 hello_name.py").stdin("foo").stdout("hello foo").stdin("bar").stdout("hello bar")
