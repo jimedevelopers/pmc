@@ -1,5 +1,5 @@
 check50:
-  checks: true
+  checks: __init__.py
   files:
     - !exclude "*"
     - !include "hello_name.py"
