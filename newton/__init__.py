@@ -1,6 +1,4 @@
 import check50
-import re
-
 
 @check50.check()
 def exists():
@@ -16,43 +14,11 @@ def test1():
 
 @check50.check(exists)
 def test14():
-    """input of 14 yields output of 1260000000000000000"""
-    output = check50.run("python3 einstein.py").stdin("14", prompt=False).stdout()
-
-    # Extract number from stdout
-    match = re.search(r"([.,]?(?:\d[.,]?)+)", output)
-    if match is None:
-        raise check50.Failure("Looks like your program didn't output a number!")
-    number = match.group(0)
-
-    # Match correct number
-    if not re.match(r"^1,?260(?:,?0{3}){5}(?:\.0+)?$", number) and not re.match(
-        r"1\.?260(?:\.?0{3}){5}(?:,0+)?$", number
-    ):
-        raise check50.Mismatch(
-            "1260000000000000000",
-            number,
-            help="Seems like your output might not be the right number!",
-        )
+    """input of 14 yields output of 140"""
+    output = check50.run("python3 newton.py").stdin("14", prompt=False).stdout("140")
 
 
 @check50.check(exists)
 def test50():
-    """input of 50 yields output of 4500000000000000000"""
-    output = check50.run("python3 einstein.py").stdin("50", prompt=False).stdout()
-
-    # Extract number from stdout
-    match = re.search(r"([.,]?(?:\d[.,]?)+)", output)
-    if match is None:
-        raise check50.Failure("Looks like your program didn't output a number!")
-    number = match.group(0)
-
-    # Match correct number
-    if not re.match(r"^4,?500(?:,?0{3}){5}(?:\.0+)?$", number) and not re.match(
-        r"^4\.?500(?:\.?0{3}){5}(?:,0+)?$", number
-    ):
-        raise check50.Mismatch(
-            "4500000000000000000",
-            number,
-            help="Seems like your output might not be the right number!",
-        )
+    """input of 50 yields output of 500"""
+    output = check50.run("python3 einstein.py").stdin("50", prompt=False).stdout("500")
