@@ -21,4 +21,4 @@ def test14():
 @check50.check(exists)
 def test50():
     """input of 50 yields output of 500"""
-    output = check50.run("python3 einstein.py").stdin("50", prompt=False).stdout("500")
+    output = check50.run("python3 newton.py").stdin("50", prompt=False).stdout("500")
