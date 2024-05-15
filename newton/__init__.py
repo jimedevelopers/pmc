@@ -11,7 +11,7 @@ def exists():
 @check50.check(exists)
 def test1():
     """input of 1 yields output of 10"""
-    output = check50.run("python3 einstein.py").stdin("1", prompt=False).stdout("10")
+    output = check50.run("python3 newton.py").stdin("1", prompt=False).stdout("10")
 
 
 @check50.check(exists)
