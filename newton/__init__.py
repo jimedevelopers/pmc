@@ -11,23 +11,7 @@ def exists():
 @check50.check(exists)
 def test1():
     """input of 1 yields output of 10"""
-    output = check50.run("python3 einstein.py").stdin("1", prompt=False).stdout()
-
-    # Extract number from stdout
-    match = re.search(r"([.,]?(?:\d[.,]?)+)", output)
-    if match is None:
-        raise check50.Failure("Looks like your program didn't output a number!")
-    number = match.group(0)
-
-    # Match correct number
-    if not re.match(r"^90(?:,?0{3}){5}(?:\.0+)?$", number) and not re.match(
-        r"^90(?:\.?0{3}){5}(?:,0+)?$", number
-    ):
-        raise check50.Mismatch(
-            "10",
-            number,
-            help="Seems like your output might not be the right number!",
-        )
+    output = check50.run("python3 einstein.py").stdin("1", prompt=False).stdout("10")
 
 
 @check50.check(exists)
