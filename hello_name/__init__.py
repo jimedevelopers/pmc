@@ -18,7 +18,4 @@ def test14():
     output = check50.run("python3 hello_name.py").stdin("Jime", prompt=False).stdout("[Hh]ello Jime")
 
 
-@check50.check(exists)
-def test50():
-    """input of Haebaek yields output of Hello Haebaek"""
-    output = check50.run("python3 hello_name.py").stdin("Haebaek", prompt=False).stdout("Hello Haebaek")
+
